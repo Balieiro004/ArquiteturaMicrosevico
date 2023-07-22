@@ -1,10 +1,7 @@
 package io.github.balieiro.mscartoes.entity;
 
 import io.github.balieiro.mscartoes.entity.enums.BandeiraCartao;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,8 +16,16 @@ public class Cartao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+
+    @Enumerated(EnumType.STRING)
     private BandeiraCartao bandeira;
     private BigDecimal renda;
     private BigDecimal limiteBasico;
 
+    public Cartao(String nome, BandeiraCartao bandeira, BigDecimal renda, BigDecimal limiteBasico) {
+        this.nome = nome;
+        this.bandeira = bandeira;
+        this.renda = renda;
+        this.limiteBasico = limiteBasico;
+    }
 }

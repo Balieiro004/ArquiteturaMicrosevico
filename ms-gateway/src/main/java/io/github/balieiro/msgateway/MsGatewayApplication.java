@@ -20,6 +20,9 @@ public class MsGatewayApplication {
 				.route("ms-clientes", r -> r
 						.path("/clientes")
 						.uri("http://localhost:8082"))
+				.route("ms-cartoes", r -> r
+						.path("/cartoes")
+						.uri("http://localhost:8083"))
 				.build();
 	}
 }
