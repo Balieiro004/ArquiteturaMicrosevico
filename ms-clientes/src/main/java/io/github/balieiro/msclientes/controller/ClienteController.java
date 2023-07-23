@@ -17,7 +17,6 @@ public class ClienteController {
 
     @GetMapping
     public String status(){
-
         log.info("Obtendo o status do microservice de clientes");
         return "Ok";
     }
@@ -40,7 +39,7 @@ public class ClienteController {
     }
 
     @GetMapping(params = "cpf")
-    public ResponseEntity dadosCliente(@RequestParam String cpf){
+    public ResponseEntity dadosCliente(@RequestParam("cpf") String cpf){
         var cliente = clienteService.getByCPF(cpf);
         if(cliente.isEmpty()){
             return ResponseEntity.notFound().build();

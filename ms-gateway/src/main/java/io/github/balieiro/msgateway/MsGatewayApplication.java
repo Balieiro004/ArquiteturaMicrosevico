@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 @EnableDiscoveryClient
@@ -14,6 +15,7 @@ public class MsGatewayApplication {
 		SpringApplication.run(MsGatewayApplication.class, args);
 	}
 
+	@Bean
 	public RouteLocator routes(RouteLocatorBuilder builder){
 		return builder
 				.routes()
@@ -23,6 +25,9 @@ public class MsGatewayApplication {
 				.route("ms-cartoes", r -> r
 						.path("/cartoes")
 						.uri("http://localhost:8083"))
+				.route("ms-avaliadorcredito", r -> r
+						.path("/avaliacoes-credito")
+						.uri("http://localhost:8084"))
 				.build();
 	}
 }
