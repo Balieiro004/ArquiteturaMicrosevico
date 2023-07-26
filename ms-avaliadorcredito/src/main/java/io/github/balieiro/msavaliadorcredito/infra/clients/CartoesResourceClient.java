@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
-
-@FeignClient(value = "ms-cartoes", path = "/cartoes")
+@FeignClient(name = "ms-cartoes", url = "http://localhost:8083/cartoes")
 public interface CartoesResourceClient {
 
     @GetMapping(params = "cpf")

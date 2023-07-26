@@ -5,25 +5,26 @@ import io.github.balieiro.msavaliadorcredito.controller.exception.ErroComunicaca
 import io.github.balieiro.msavaliadorcredito.entity.SituacaoCliente;
 import io.github.balieiro.msavaliadorcredito.service.AvaliadorCreditoService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("avaliacoes-credito")
 @RequiredArgsConstructor
+@Slf4j
 public class AvaliadorCreditoController {
 
     private final AvaliadorCreditoService avaliadorCreditoService;
+
     @GetMapping
     public String status(){
         return "Ok";
     }
-    @GetMapping(value = "situacao-cliente", params = "cpf")
+    @GetMapping(params = "cpf")
     public ResponseEntity consultaSituacaoCliente(@RequestParam("cpf") String cpf){
+        log.info("Obtendo o status do microservice de Avaliador de Crédito - Contulta Situação Cliente");
         try {
             SituacaoCliente situacaoCliente = avaliadorCreditoService.obterSituacaoCliente(cpf);
             return ResponseEntity.ok(situacaoCliente);

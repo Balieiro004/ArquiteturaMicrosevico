@@ -9,6 +9,7 @@ import io.github.balieiro.msavaliadorcredito.entity.SituacaoCliente;
 import io.github.balieiro.msavaliadorcredito.infra.clients.CartoesResourceClient;
 import io.github.balieiro.msavaliadorcredito.infra.clients.ClienteResourceClient;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
