@@ -2,10 +2,12 @@ package io.github.balieiro.msavaliadorcredito.entity;
 
 import lombok.Data;
 
-@Data
-public class DadosCliente {
+import java.math.BigDecimal;
 
+@Data
+public class Cartao {
     private Long id;
     private String nome;
-    private Integer idade;
+    private String bandeira;
+    private BigDecimal limiteBasico;
 }
