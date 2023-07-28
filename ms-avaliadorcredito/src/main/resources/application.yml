@@ -1,6 +1,11 @@
 spring:
   application:
     name: ms-avaliadorcredito
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 server:
   port: 8084
@@ -12,10 +17,6 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.aplication.instance_id:${random.value}}
 
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 50000
-        readTimeout: 50000
-        loggerLevel: basic
+mq:
+  queues:
+    emissao-cartoes: emissao-cartoes

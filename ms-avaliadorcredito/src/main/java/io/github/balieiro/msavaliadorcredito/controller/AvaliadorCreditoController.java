@@ -2,9 +2,8 @@ package io.github.balieiro.msavaliadorcredito.controller;
 
 import io.github.balieiro.msavaliadorcredito.controller.exception.DadosClienteNotFoundException;
 import io.github.balieiro.msavaliadorcredito.controller.exception.ErroComunicacaoMicroservicesException;
-import io.github.balieiro.msavaliadorcredito.entity.DadosAvaliacao;
-import io.github.balieiro.msavaliadorcredito.entity.RetornoAvaliacaoCliente;
-import io.github.balieiro.msavaliadorcredito.entity.SituacaoCliente;
+import io.github.balieiro.msavaliadorcredito.controller.exception.ErroSolicitacaoCartaoException;
+import io.github.balieiro.msavaliadorcredito.entity.*;
 import io.github.balieiro.msavaliadorcredito.service.AvaliadorCreditoService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -45,6 +44,15 @@ public class AvaliadorCreditoController {
             return ResponseEntity.notFound().build();
         } catch (ErroComunicacaoMicroservicesException e) {
             return ResponseEntity.status(HttpStatus.resolve(e.getStatus())).body(e.getMessage());
+        }
+    }
+    @PostMapping("/solicitacoes-cartao")
+    public ResponseEntity solicitarCartao(@RequestBody DadosSolicitacaoEmissaoCartao dados){
+        try{
+            ProtocoloSolicitacaoCartao protocoloSolicitacaoCartao = avaliadorCreditoService.solicitarEmissaoCartao(dados);
+            return ResponseEntity.ok(protocoloSolicitacaoCartao);
+        }catch (ErroSolicitacaoCartaoException e){
+            return ResponseEntity.internalServerError().body(e.getMessage());
         }
     }
 }

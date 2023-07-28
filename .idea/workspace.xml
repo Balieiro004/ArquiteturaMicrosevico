@@ -5,16 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3ff26e5-359f-4b9c-973b-73583a10cdd6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/entity/Cartao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/entity/CartaoAprovado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/entity/DadosAvaliacao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/entity/RetornoAvaliacaoCliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/config/MQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/controller/exception/ErroSolicitacaoCartaoException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/entity/DadosSolicitacaoEmissaoCartao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/entity/ProtocoloSolicitacaoCartao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/infra/mqueue/SolicitacaoEmissaoCartaoPublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-cartoes/src/main/java/io/github/balieiro/mscartoes/entity/DadosSolicitacaoEmissaoCartao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ms-cartoes/src/main/java/io/github/balieiro/mscartoes/infra/mqueue/EmissaoCartaoSubscriber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-avaliadorcredito/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-avaliadorcredito/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/AvaliadorCreditoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/AvaliadorCreditoApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/controller/AvaliadorCreditoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/controller/AvaliadorCreditoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/entity/DadosCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/entity/DadosCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/infra/clients/CartoesResourceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/infra/clients/CartoesResourceClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/infra/clients/ClienteResourceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/infra/clients/ClienteResourceClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/service/AvaliadorCreditoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/java/io/github/balieiro/msavaliadorcredito/service/AvaliadorCreditoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-avaliadorcredito/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-cartoes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-cartoes/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-cartoes/src/main/java/io/github/balieiro/mscartoes/MsCartoesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ms-cartoes/src/main/java/io/github/balieiro/mscartoes/MsCartoesApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ms-cartoes/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ms-cartoes/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +131,8 @@
       <workItem from="1690210512112" duration="3130000" />
       <workItem from="1690301555105" duration="11944000" />
       <workItem from="1690369941197" duration="17303000" />
-      <workItem from="1690462723181" duration="2694000" />
+      <workItem from="1690462723181" duration="11575000" />
+      <workItem from="1690566771008" duration="3460000" />
     </task>
     <servers />
   </component>
